@@ -1,0 +1,3 @@
+# . venv/bin/activate
+pip install -r requirements.txt
+ipython kernel install --name "KL_graph_embeddings__graph2vec" --user
