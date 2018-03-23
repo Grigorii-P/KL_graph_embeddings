@@ -1,0 +1,4 @@
+py -m pip install virtualenv
+py -m virtualenv [PATH]
+venv_wind\Scripts\activate
+ipython kernel install --name "KL_graph_embeddings__graph2vec" --user
