@@ -1,0 +1,24 @@
+Delete untracked files and directories
+	git clean -f -d
+
+Convert .ipynb to .py
+	jupyter nbconvert --to script [YOUR_NOTEBOOK].ipynb
+
+Add local repo to github
+	https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/
+
+Create virtual environment
+	virtualenv [OPTIONS] DEST_DIR
+	. DEST_DIR/bin/activate
+	deactivate
+
+	pip freeze > requirements.txt
+	pip install -r requirements.txt
+
+Work in Jupyter with specific virtualenv
+	.venv/bin/activate
+	(venv) pip install jupyter
+	(venv) ipython kernel install --name "[KERNEL_NAME]" --user
+
+Virtualenv with python2.7
+	virtualenv --python=/usr/bin/python2.7 [PATH] 
