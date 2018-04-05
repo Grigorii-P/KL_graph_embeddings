@@ -55,14 +55,13 @@ def X_Y_from_embeddings(all_labels_file, embeddings_file):
     Y = numpy.array([numpy.array(xi) for xi in y])
     return X, Y
 
-def foo():
+def create_equal_portinons(dst_file):
     with open('all_labels.txt', 'r') as file:
         all_labels = json.loads(file.read())
 
     new_dic = {}
     c0,c1,c2=0,0,0
     num_category = 10000
-
 
     for key in all_labels:
         if c0 == num_category and c1 == num_category and c2 == num_category:
@@ -78,8 +77,20 @@ def foo():
             new_dic[key] = 2
             c2 += 1
 
-    with open('labels_30000.txt', 'w') as file:
+    with open(dst_file, 'w') as file:
         file.write(json.dumps(new_dic))
+
+def test_proportions(Y):
+    c0, c1, c2 = 0, 0, 0
+    for item in Y:
+        if item == 0:
+            c0 += 1
+        if item == 1:
+            c1 += 1
+        if item == 2:
+            c2 += 1
+
+    print('clean %.1f, pua %.1f, malw %.1f' % ((c0 / (c0 + c1 + c2)), (c1 / (c0 + c1 + c2)), (c2 / (c0 + c1 + c2))))
 
 def copy_files(which_files_dict, src, dst):
     with open(which_files_dict, 'r') as file:
