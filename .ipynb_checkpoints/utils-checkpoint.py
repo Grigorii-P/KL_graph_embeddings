@@ -64,6 +64,7 @@ def create_csv_features(ready_md5, paths_to_datasets):
     with open('labels_30000_with_csv_features.txt', 'w') as file:
         file.write(json.dumps(res_dict))
 
+
 def create_equal_portions(dst_file):
     with open('all_labels.txt', 'r') as file:
         all_labels = json.loads(file.read())
@@ -105,28 +106,6 @@ def X_Y_from_embeddings(all_labels_file, embeddings_file):
     X = numpy.array([numpy.array(xi) for xi in x])
     Y = numpy.array([numpy.array(xi) for xi in y])
     return X, Y
-
-
-def X_Y_from_embeddings_and_csv(all_labels_file, embeddings_file, csv_features_file):
-    with open(all_labels_file, 'r') as file:
-        all_labels = json.loads(file.read())
-
-    with open(embeddings_file, 'r') as file:
-        embeddings = json.loads(file.read())
-
-    with open(csv_features_file, 'r') as file:
-        csv_features = json.loads(file.read())
-
-    x, y = [], []
-    for key in embeddings:
-        md5 = key.split('/')[-1].split('.')[0]
-        x.append(embeddings[key] + csv_features[md5])
-        y.append(all_labels[md5])
-
-    X = numpy.array([numpy.array(xi) for xi in x])
-    Y = numpy.array([numpy.array(xi) for xi in y])
-    return X, Y
-
 
 def test_proportions(Y):
     c0, c1, c2 = 0, 0, 0
