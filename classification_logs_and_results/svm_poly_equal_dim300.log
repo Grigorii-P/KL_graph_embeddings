@@ -1,0 +1,16 @@
+INFO:root:Train and Test matrix shapes: (22488, 300), (7496, 300), (22488,), (7496,) 
+INFO:root:===================== SVM [poly] =====================
+INFO:root:fit time is 11.8 min
+INFO:root:best classifier model's hyperparamters{'C': 1, 'coef0': 1, 'degree': 2, 'kernel': 'poly'}
+INFO:root:Linear SVM accuracy: 0.3493863393810032
+INFO:root:             precision    recall  f1-score   support
+
+          0       0.38      0.24      0.29      2540
+          1       0.36      0.21      0.26      2546
+          2       0.34      0.61      0.43      2410
+
+avg / total       0.36      0.35      0.33      7496
+
+INFO:root:FPR without pua: 0.18876734258271077
+INFO:root:FPR with pua: 0.25773745997865527
+INFO:root:======================================================

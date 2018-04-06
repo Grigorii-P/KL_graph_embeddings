@@ -1,0 +1,16 @@
+INFO:root:Train and Test matrix shapes: (22488, 300), (7496, 300), (22488,), (7496,) 
+INFO:root:===================== SVM [linear] =====================
+INFO:root:fit time is 5.9 min
+INFO:root:best classifier model's hyperparamters{'C': 1}
+INFO:root:Linear SVM accuracy: 0.34405016008537886
+INFO:root:             precision    recall  f1-score   support
+
+          0       0.34      0.77      0.47      2548
+          1       0.35      0.18      0.24      2479
+          2       0.35      0.06      0.11      2469
+
+avg / total       0.35      0.34      0.28      7496
+
+INFO:root:FPR without pua: 0.01987726787620064
+INFO:root:FPR with pua: 0.076974386339381
+INFO:root:======================================================
