@@ -4,6 +4,7 @@ import json
 import pandas as pd
 import numpy
 import os
+import random
 
 def create_all_labels_dict_file_from_csv(paths_to_datasets, path_to_all_labels_file):
     clean_g = pd.read_csv(paths_to_datasets[0])
@@ -69,9 +70,12 @@ def create_equal_portions(dst_file):
 
     new_dic = {}
     c0, c1, c2 = 0, 0, 0
-    num_category = 15000
+    num_category = 10000
 
-    for key in all_labels:
+    keys =  list(all_labels.keys())
+    random.shuffle(keys)
+    
+    for key in keys:
         if c0 == num_category and c2 == num_category:
             break
 
