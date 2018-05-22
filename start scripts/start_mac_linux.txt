@@ -1,6 +1,0 @@
-# . venv/bin/activate
-pip install -r requirements.txt
-ipython kernel install --name "KL_graph_embeddings__graph2vec" --user
-
-+++ LINUX
-pip install tensorflow-gpu==1.4.0
